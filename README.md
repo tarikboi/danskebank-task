@@ -53,6 +53,7 @@ A .NET Console application for managing taxes applied in different municipalitie
     ```bash
     add copenhagen year 0.2 2025-01-01 2025-12-31
     ```
+  - **OBS:** Always include both startDate and endDate when adding a tax record, even for the 'Day' tax type.
 
 - **Import Tax Data from CSV file**:
   - Format: `import <filePath>`
