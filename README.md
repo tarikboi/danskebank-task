@@ -4,8 +4,7 @@ A .NET Console application for managing taxes applied in different municipalitie
 
 ## Prerequisites
 
-- **.NET SDK** version 9.0
-- **SQLite**
+- **.NET SDK** version 8.0 or over
 - **Entity Framework Core CLI Tools** (install globally via `dotnet tool install --global dotnet-ef`)
 
 ## Getting Started
@@ -14,7 +13,7 @@ A .NET Console application for managing taxes applied in different municipalitie
 
    ```bash
    git clone <repository_url>
-   cd <repository_directory>
+   cd <repository_directory>/danskebank-task
    ```
 
 2. **Restore Dependencies**

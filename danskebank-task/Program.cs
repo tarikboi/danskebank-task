@@ -99,7 +99,7 @@ public class Program
         }
         catch (ArgumentException)
         {
-            Console.WriteLine($"Invalid tax type");
+            Console.WriteLine($"Please enter a valid tax type: day, month, year");
         }
         catch (Exception)
         {
@@ -119,12 +119,25 @@ public class Program
         try
         {
             taxes = CsvParser.ParseTaxes(filePath);
+            await taxService.ImportTaxes(taxes);
+            Console.WriteLine($"{taxes.Count} taxes successfully imported");
+        }
+        catch (FileNotFoundException)
+        {
+            Console.WriteLine("The file does not exist");
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Error in file. Please follow the correct structure: copenhagen,year,0.2,2016-01-01,2016-12-31 in .CSV format");
+        }
+        catch (ArgumentException)
+        {
+            Console.WriteLine($"Please enter a valid tax type: day, month, year");
         }
         catch (Exception)
         {
-            Console.WriteLine("Error in file. File must be structured as follows: copenhagen,year,0.2,2016-01-01,2016-12-31 in .CSV format");
+            Console.WriteLine("Error importing taxes");
         }
-        await taxService.ImportTaxes(taxes);
     }
 
     private static void DisplayHelp()
