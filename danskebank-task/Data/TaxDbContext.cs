@@ -10,7 +10,6 @@ public class TaxDbContext : DbContext
     {
         var folder = Environment.SpecialFolder.LocalApplicationData;
         var path = Environment.GetFolderPath(folder);
-        Console.WriteLine(path);
         DbPath = Path.Join(path, "tax.db");
     }
 
